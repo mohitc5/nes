@@ -28,6 +28,15 @@ class C6502 {
 
         std::string filepath;
 
+        // Flags
+        bool flagCarry;
+        bool flagZero;
+        bool flagInterruptDisable;
+        bool flagDecimal;
+        bool flagOverflow;
+        bool flagNegative;
+
+
         uint8_t read(uint16_t addr);
         void reset();
         void run();
