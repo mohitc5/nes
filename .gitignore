@@ -1,0 +1,7 @@
+build/
+CLAUDE.md
+*:Zone.Identifier
+*.o
+*.obj
+.vscode/
+.cache/
