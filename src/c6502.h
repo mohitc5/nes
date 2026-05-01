@@ -76,6 +76,8 @@ class C6502 {
         void readAbsoluteYIndexed();
         void readZeroPageXIndexed();
         void readZeroPageYIndexed();
+        void readIndirectXIndexed();
+        void readIndirectYIndexed();
         void opASL(uint16_t addr, uint8_t input);
         void opROL(uint16_t addr, uint8_t input);
         void opLSR(uint16_t addr, uint8_t input);
