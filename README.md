@@ -36,7 +36,15 @@ What this implementation handles:
 
 ## Verification
 The CPU was validated throughout developement using test ROMs created by 100th_Coin from his NES
-Emulator guide, passing all CPU related tests.
+Emulator guide, passing all CPU related tests. To validate behaviour with these tests, the VS Code
+debugger with gdb was used to ensure correct values were loaded into memory and registers. A custom
+tracelogger was also developed to get cycle accurate information of every instruction performed
+by the CPU. The tracelogger output was compared against reference logs to ensure correct behaviour
+for all tests. below shows an example output of the tracelogger, with the columns in this order: 
+
+Program Counter, Instruction opcode, Instruction, A reg, X reg, Y reg, Stack Pointer, Flag Statuses (lowercase  = 0, uppercase = 1)
+<img width="1534" height="560" alt="image" src="https://github.com/user-attachments/assets/aacbdd32-ee91-47f4-91a5-4cf6cfbb6d9e" />
+
 The CPU is validated against `nestest`, the canonical 6502 test ROM. Run with `PC` initialized
 to `$C000` (automated mode), the emulator's trace output is byte-comparable to `nestest.log`
 across the official-opcode portion of the ROM:
