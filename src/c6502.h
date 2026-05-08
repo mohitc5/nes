@@ -10,6 +10,7 @@
 #include <random>
 
 
+class PPU;
 
 class C6502 {
     public:
@@ -29,6 +30,8 @@ class C6502 {
         std::array<uint8_t, RAM_SIZE> RAM;
         std::array<uint8_t, ROM_SIZE> ROM;
         std::array<uint8_t, HEADER_SIZE> Header;
+
+        PPU* ppu = nullptr;
 
         std::string filepath;
 

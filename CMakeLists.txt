@@ -7,7 +7,13 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_compile_options(-Wall -Wextra)
 
+find_package(SDL2 REQUIRED)
+
 add_executable(nes
     src/main.cpp
     src/c6502.cpp
+    src/ppu.cpp
+    src/platform.cpp
 )
+
+target_link_libraries(nes PRIVATE SDL2::SDL2)
